@@ -7,16 +7,16 @@ package discount.strategy.DiscountStrategy;
 public class BackToSchoolDiscount implements DiscountStrategy{
     
     private double discountRate = .30;
-    private double discountPrice;
+//    private double discountPrice;
     private double discountAmount;
     
     @Override
-     public double getExtendedDiscountedAmount(double price, double qty){
+     public double getDiscountOffProduct(double price, double qty){
         
-        discountPrice = (price * qty) * discountRate;
+        return (price * qty) * discountRate;
         
         
-            return (price * qty) - discountPrice;
+//            return (price * qty) - discountPrice;
         }
 
     @Override
@@ -25,7 +25,7 @@ public class BackToSchoolDiscount implements DiscountStrategy{
     }
 
     @Override
-    public void setDiscountPercent(double discountPercent) {
+    public void setDiscountRate(double discountPercent) {
         this.discountRate = discountPercent;
     }
     
@@ -41,10 +41,10 @@ public class BackToSchoolDiscount implements DiscountStrategy{
 //    }
 //    
 
-    @Override
-    public void setPrice(double unitCost) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+//    @Override
+//    public void setPrice(double unitCost) {
+//        throw new UnsupportedOperationException("Not supported yet.");
+//    }
     
     
     

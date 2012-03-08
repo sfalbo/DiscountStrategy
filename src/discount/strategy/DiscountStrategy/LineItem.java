@@ -59,12 +59,12 @@ public class LineItem {
         return null;
     }
     
-    public double getTotalDiscount() {
-        return roundUpCents(product.getTotalDiscount(qty));
+    public double getProductDiscount() {
+        return roundUpCents(product.getProductDiscount(qty));
     }
 
     public double getLineItemTotal() {
-        return roundUpCents(product.getUnitCost() * qty - getTotalDiscount());
+        return roundUpCents(product.getUnitCost() * qty - getProductDiscount());
     }
     
     //I took this from your program becuase I wasn't sure how to do this.

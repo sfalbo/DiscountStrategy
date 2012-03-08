@@ -10,8 +10,8 @@ public class Product {
     private String productID;
     private double unitCost;
     private DiscountStrategy discountStrategy;
-    private DiscountStrategy[] discounts = new DiscountStrategy[0];
-    private double discountTotal;
+//    private DiscountStrategy[] discounts = new DiscountStrategy[0];
+//    private double discountTotal;
 
     public Product(String productName, String productID, double unitCost, DiscountStrategy discountStrategy) {
         this.productName = productName;
@@ -28,8 +28,8 @@ public class Product {
         this.discountStrategy = discountStrategy;
     }
     
-        double getTotalDiscount(double qty) {
-        return discountTotal;
+    double getProductDiscount(double qty) {
+        return discountStrategy.getDiscountOffProduct(unitCost, qty);
     }
     
 //    public double getTotalDiscount(double qty){

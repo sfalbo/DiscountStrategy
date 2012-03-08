@@ -7,7 +7,8 @@ package discount.strategy.DiscountStrategy;
 public class QuanityDiscount implements DiscountStrategy {
 
     private double discountRate = .10;
-    private double discountAmount;
+//    private double discountAmount;
+    private int minQty = 2;
 
     @Override
     public double getDiscountRate() {
@@ -15,18 +16,18 @@ public class QuanityDiscount implements DiscountStrategy {
     }
 
     @Override
-    public double getExtendedDiscountedAmount(double price, double qty) {
+    public double getDiscountOffProduct(double price, double qty) {
 
-        discountAmount = (price * qty) * discountRate;
+//        discountAmount = (price * qty) * discountRate;
 
-        if (qty >= 2) {
-            return (price * qty) + discountAmount;
+        if (qty >= minQty) {
+            return (price * qty) * discountRate;
         }
-        return price;
+        return 0;
     }
 
     @Override
-    public void setDiscountPercent(double discountPercent) {
+    public void setDiscountRate(double discountPercent) {
         this.discountRate = discountPercent;
     }
     
@@ -39,8 +40,16 @@ public class QuanityDiscount implements DiscountStrategy {
 //        
 //    }
 
-    @Override
-    public void setPrice(double unitCost) {
-        throw new UnsupportedOperationException("Not supported yet.");
+//    @Override
+//    public void setPrice(double unitCost) {
+//        throw new UnsupportedOperationException("Not supported yet.");
+//    }
+
+    public int getMinQty() {
+        return minQty;
+    }
+
+    public void setMinQty(int minQty) {
+        this.minQty = minQty;
     }
 }

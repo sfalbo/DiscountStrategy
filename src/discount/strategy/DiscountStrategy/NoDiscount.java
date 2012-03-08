@@ -9,8 +9,8 @@ public class NoDiscount implements DiscountStrategy {
     private double discountRate = 0.00;
 
     @Override
-    public double getExtendedDiscountedAmount(double price, double qty) {
-        return price * qty;
+    public double getDiscountOffProduct(double price, double qty) {
+        return 0;
     }
 
     @Override
@@ -19,7 +19,7 @@ public class NoDiscount implements DiscountStrategy {
     }
 
     @Override
-    public void setDiscountPercent(double discountPercent) {
+    public void setDiscountRate(double discountPercent) {
         this.discountRate = discountPercent;
     }
     
@@ -33,8 +33,8 @@ public class NoDiscount implements DiscountStrategy {
 //    }
 //    
 
-    @Override
-    public void setPrice(double unitCost) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+//    @Override
+//    public void setPrice(double unitCost) {
+//        throw new UnsupportedOperationException("Not supported yet.");
+//    }
 }

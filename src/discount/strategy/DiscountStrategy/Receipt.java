@@ -79,7 +79,14 @@ public class Receipt {
 
     }
     
-    void displayInvoice() {
+//    private double roundUpCents(double value) {
+//        double result = value * 100;
+//        result = Math.round(result);
+//        result = result / 100;
+//        return result;
+//    }
+    
+    public void displayInvoice() {
 
         System.out.println("The Customer ID: " + customer.getCustomerID());
         System.out.println("Name: " + customer.getCustomerName());
@@ -90,9 +97,9 @@ public class Receipt {
             String productId = im.getProductId();
             double qnty = im.getQty();
             double ltot = im.getLineItemTotal();
-            Product prod = im.getProductByID(productId);
-            String prdnme = prod.getProductName();
-            double up = prod.getUnitCost();
+//            Product prod = im.getProductByID(productId);
+            String prdnme = im.getProduct().getProductName(); //prod.getProductName();
+            double up = im.getProduct().getUnitCost(); //prod.getUnitCost();
             
             System.out.println(productId + "\t\t" + prdnme + "\t\t" + up + "\t\t\t" + qnty + "\t\t" + ltot);
             

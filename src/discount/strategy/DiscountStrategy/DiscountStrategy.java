@@ -6,11 +6,11 @@ package discount.strategy.DiscountStrategy;
  */
 public interface DiscountStrategy {
 
-    double getExtendedDiscountedAmount(double price, double qty);
+    double getDiscountOffProduct(double price, double qty);
 
     double getDiscountRate();
 
-    void setDiscountPercent(double discountPercent);
+    void setDiscountRate(double discountPercent);
 
-    public void setPrice(double unitCost);
+//    public void setPrice(double unitCost);
 }

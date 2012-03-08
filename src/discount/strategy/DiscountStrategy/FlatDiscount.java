@@ -9,9 +9,9 @@ public class FlatDiscount implements DiscountStrategy {
     private double discountRate = 5.00;
 
     @Override
-    public double getExtendedDiscountedAmount(double price, double qty) {
+    public double getDiscountOffProduct(double price, double qty) {
 
-        return (price * qty) - discountRate;
+        return discountRate;
 
     }
 
@@ -21,7 +21,7 @@ public class FlatDiscount implements DiscountStrategy {
     }
 
     @Override
-    public void setDiscountPercent(double discountPercent) {
+    public void setDiscountRate(double discountPercent) {
         this.discountRate = discountPercent;
     }
 
@@ -29,15 +29,15 @@ public class FlatDiscount implements DiscountStrategy {
     public static void main(String[] args) {
         FlatDiscount fd = new FlatDiscount();
 //        fd.setDiscountPercent(.10);
-        double amount = fd.getExtendedDiscountedAmount(10.00, 5);
+        double amount = fd.getDiscountOffProduct(10.00, 5);
         System.out.println("the FlatDiscount amount is " + amount);
 
     }
 
-    @Override
-    public void setPrice(double unitCost) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+//    @Override
+//    public void setPrice(double unitCost) {
+//        throw new UnsupportedOperationException("Not supported yet.");
+//    }
     
     
 }
