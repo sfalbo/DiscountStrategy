@@ -15,6 +15,7 @@ public class Startup {
         cr.addnewlineItem("SS502", 4);
         cr.addnewlineItem("SS602", 6);
 
+        
 
 
         cr.displayInvoice();
